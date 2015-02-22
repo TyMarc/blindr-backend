@@ -5,7 +5,7 @@ import os
 
 secret = 'f4babeae21e325df1ff6656d79a5ff0ceac02635'
 engine = create_engine(os.environ.get('DATABASE_URL'), echo=True)
-session = scoped_session(sessionmaker(autocommit=False,
+  session = scoped_session(sessionmaker(autocommit=False,
                             autoflush=False,
                             bind=engine))
 

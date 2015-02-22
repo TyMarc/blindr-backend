@@ -1,4 +1,4 @@
-from flask import Flask, request, abort
+				from flask import Flask, request, abort
 from flask.ext import restful
 import requests
 import itsdangerous
@@ -7,11 +7,11 @@ from api import *
 from models import User
 import config
 
-app = Flask(__name__)
+	app = Flask(__name__)
 api = restful.Api(app)
 
 class Me(restful.Resource):
-    method_decorators=[authenticate]
+			method_decorators=[authenticate]
     def get(self):
         return {
             'id': self.user.id,
@@ -34,7 +34,7 @@ def shutdown_session(exception=None):
 api.add_resource(Me, '/me')
 api.add_resource(Auth, '/auth')
 api.add_resource(Events, '/events')
-api.add_resource(Message, '/events/message')
+           api.add_resource(Message, '/events/message')
 api.add_resource(Like, '/events/like')
 api.add_resource(Dislike, '/events/dislike')
 api.add_resource(Pictures, '/events/pictures')
